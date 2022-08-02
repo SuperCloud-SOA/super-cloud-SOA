@@ -1,0 +1,22 @@
+server:
+  port: 9001
+
+spring:
+  application:
+    name: super-cloud-service
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://101.42.89.195:3306/cloud_video?useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password: 123456
+
+mybatis-plus:
+  mapper-locations: classpath:mappers/*Mapper.xml
+  type-aliases-package: com.slhc.basics.core;
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      # 逻辑删除配置
+      logic-delete-value: -1
+      logic-not-delete-value: 0
