@@ -7,6 +7,7 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="super-cloud-system" />
+        <module name="super-cloud-gateway" />
         <module name="super-cloud-common" />
       </profile>
     </annotationProcessing>

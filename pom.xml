@@ -10,6 +10,7 @@
     <modules>
         <module>super-cloud-system</module>
         <module>super-cloud-common</module>
+        <module>super-cloud-gateway</module>
     </modules>
 
     <!-- 一般来说父级项目的packaging都为pom，packaging默认类型jar类型-->

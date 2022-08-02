@@ -1,9 +1,8 @@
-package com.superCloud;
+package superCloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
-import org.springframework.cloud.openfeign.EnableFeignClients;
 
 /**
  * 系统管理
@@ -11,13 +10,12 @@ import org.springframework.cloud.openfeign.EnableFeignClients;
  * @version 1.0
  * @date 2022/8/2 11:28
  */
-@EnableFeignClients
 @EnableDiscoveryClient
 @SpringBootApplication
-public class SuperCloudSystemApplication {
+public class SuperCloudGatewayApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SuperCloudSystemApplication.class,args);
+        SpringApplication.run(SuperCloudGatewayApplication.class,args);
     }
 
 }
