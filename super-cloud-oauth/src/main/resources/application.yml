@@ -1,12 +1,15 @@
 server:
-  port: 9001
+  port: 9002
 
 spring:
-  application:
-    name: super-cloud-gateway
   redis:
     host: 127.0.0.1
     password: 123456
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER #springboot2.6.x如果不加该配置会报错
+  application:
+    name: super-cloud-oauth
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/super_cloud?useUnicode=true&characterEncoding=utf-8&useSSL=false
@@ -16,21 +19,9 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
-    gateway:
-      routes:
-        - id: super-cloud-oauth
-          uri: lb://super-cloud-oauth
-          predicates:
-            - Path=/auth/**
-          filters:
-            - StripPrefix=1
-      discovery:
-        locator:
-          enabled: true  #开启网关拉取nacos的服务
-
 mybatis-plus:
   mapper-locations: classpath:mappers/*Mapper.xml
-  type-aliases-package: com.slhc.basics.core;
+  type-aliases-package: com.superCloud.web.pojo
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
@@ -38,3 +29,8 @@ mybatis-plus:
       # 逻辑删除配置
       logic-delete-value: -1
       logic-not-delete-value: 0
+
+springfox:
+  documentation:
+    swagger-ui:
+      enabled: true

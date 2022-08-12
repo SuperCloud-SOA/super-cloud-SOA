@@ -1,21 +1,22 @@
-package superCloud;
+package com.superCloud;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
- * 网关认证
+ * oauth2认证服务
  * @author ys
  * @version 1.0
- * @date 2022/8/2 11:28
+ * @date 2022/8/2 17:36
  */
 @EnableDiscoveryClient
 @SpringBootApplication
-public class SuperCloudGatewayApplication {
+public class SuperCloudOauthApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SuperCloudGatewayApplication.class,args);
+        SpringApplication.run(SuperCloudOauthApplication.class,args);
     }
+
 
 }
